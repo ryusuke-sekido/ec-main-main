@@ -1,0 +1,9 @@
+<h1>ここはadmin/shopのedit画面です</h1>
+<%= form_with model:@shop, url: admin_shop_path(@shop.id), method: :patch do |f| %>
+<h1>ジャンル編集</h1>
+ <h2>タイトル</h2>
+ <%=f.text_field :title %>
+ <h2>本文</h2>
+ <%=f.text_area :body %>
+ <%=f.submit '更新' %>
+<% end %>

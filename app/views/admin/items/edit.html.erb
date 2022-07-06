@@ -1,0 +1,14 @@
+<h1>Admin::Items#edit</h1>
+
+<%= form_with model:@item, url: admin_item_path(@item.id), method: :patch do |f| %>
+<h1>商品編集</h1>
+ <h2>タイトル</h2>
+ <%=f.text_field :name %>
+ <h2>本文</h2>
+ <%=f.text_area :body %>
+ <h2>画像</h2>
+ <%=f.file_field :image %>
+ <%=f.submit '更新' %>
+<% end %>
+
+<%= link_to '商品一覧', admin_items_path %>

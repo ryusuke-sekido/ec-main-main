@@ -1,0 +1,19 @@
+<h1>CartItems#index</h1>
+<p>カート内商品一覧画面</p>
+<% @items.each do |item| %>
+ <%= item.name %>
+<% end %>
+
+<% @cart_items.each do |cart_item| %>
+<%= cart_item.amount %>
+<% end %>
+
+
+<p>単価(税込)</p>
+<p>小計</p>
+<%# @cart_items.each do |cart_item| %>
+<%#<%= cart_item.with_tax_price %>
+<%#<%= cart_item.subtotal %>
+<%#<% @合計金額 +=  cart_item.subtotal %>
+<%#<% end %>
+<%= link_to "注文画面へ", new_order_path %>

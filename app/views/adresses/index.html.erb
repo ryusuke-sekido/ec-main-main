@@ -1,0 +1,19 @@
+<h1>Adresses#index</h1>
+
+<%= form_with model:@adress, url: '/adresses', method: :post do |f| %>
+<p>配送先登録機能</p>
+ <h2>郵便番号</h2>
+ <%=f.text_field :postal_code %>
+ <h2>住所</h2>
+ <%=f.text_area :address %>
+ <h2>宛名</h2>
+ <%=f.text_area :name %>
+ <%=f.submit '登録' %>
+<% end %>
+
+<p>配送先一覧画面</p>
+<% @adresses.each do |adress| %>
+ <p></p>
+ <span>・<%= adress.postal_code %> <%= adress.address %> <%= adress.name %></span>
+<% end %>
+

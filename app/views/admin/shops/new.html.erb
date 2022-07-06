@@ -1,0 +1,11 @@
+<h1>ここはadmin/shopのnewページです</h1>
+
+<%= form_with model:@shop, url: '/admin/shops', method: :post do |f| %>
+ <h1>ジャンル登録</h1>
+ <%=f.text_field :title %>
+ <h2>本文</h2>
+ <%=f.text_area :body %>
+ <%=f.submit '登録' %>
+<% end %>
+
+<% #このページはindexにコピーした。 %>

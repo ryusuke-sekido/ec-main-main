@@ -1,0 +1,16 @@
+<p>ここはadmin/shopのindexページです</p>
+
+<%= form_with model:@shop, url: '/admin/shops', method: :post do |f| %>
+ <h1>ジャンル登録</h1>
+ <h2>タイトル</h2>
+ <%=f.text_field :title %>
+ <h2>本文</h2>
+ <%=f.text_area :body %>
+ <%=f.submit '登録' %>
+<% end %>
+
+<h1>ジャンル一覧</h1>
+<% @shops.each do |shop| %>
+ <p></p>
+ <span>・<%= shop.title %> <%= shop.body %></span>
+<% end %>

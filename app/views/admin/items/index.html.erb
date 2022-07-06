@@ -1,0 +1,12 @@
+<h1>Admin::Items#index</h1>
+
+<%= link_to '新規登録',new_admin_item_path %>
+<% #新規登録画面へ %>
+
+<h1>商品一覧</h1>
+<% @items.each do |item| %>
+ <span>・<%= item.name %> <%= item.body %>
+ <%= link_to admin_item_path(item.id) do %>
+ <%= image_tag item.image, size: "100x100" %>
+ <% end %></span>
+<% end %>

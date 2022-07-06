@@ -1,0 +1,16 @@
+<h1>注文情報確認</h1>
+<h4>商品名</h4>
+<%#<%= @item.name %>
+<h4>数量</h4>
+<%#<%= @cart_item.amount %>
+<h4>支払い方法</h4>
+<%= @order.payment_method %>
+<h4>お届け先</h4>
+<p>郵便番号：<%= @order.postal_code %></p>
+<p>住所：<%= @order.address %></p>
+<p>氏名：<%= @order.name %></p>
+
+<%= form_with model: @order, url:'/orders' do |f| %>
+<%= f.hidden_field :order_id, :value =>@order.id  %>
+<%= f.submit '注文を確定する' %>
+<% end %>
