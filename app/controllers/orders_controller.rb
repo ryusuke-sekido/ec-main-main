@@ -4,6 +4,8 @@ class OrdersController < ApplicationController
   end
 
   def confirm
+    @items = Item.all
+    @cart_items = CartItem.all
     @order = Order.new(order_params)
     @address = Adress.find(params[:order][:address_id])
     @order.postal_code = @address.postal_code
@@ -29,4 +31,12 @@ end
 private
 def order_params
   params.require(:order).permit(:payment_method,:postal_code, :address, :name)
+end
+
+def item_params
+  params.require(:item).permit(:name, :introduction, :image, :price)
+end
+
+def cart_item_params
+  params.require(:cart_item).permit(:item_id, :amount)
 end

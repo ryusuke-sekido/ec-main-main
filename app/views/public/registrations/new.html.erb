@@ -2,14 +2,25 @@
 
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= render "public/shared/error_messages", resource: resource %>
-
-  <h4>姓</h4>
-  <%=f.text_field :last_name %>
-
+  <h3>名前</h3>
+  <p>(姓)</p>
+   <%=f.text_field :last_name %>
+  <p>(名)</p>
+   <%=f.text_field :first_name %>
+  <p>(セイ)</p>
+   <%=f.text_field :last_name_kana %>
+  <p>(メイ)</p>
+   <%=f.text_field :first_name_kana %>
   <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+   <%= f.label :email %><br />
+   <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
   </div>
+  <p>郵便番号(ハイフンなし)</p>
+   <%=f.text_field :postal_code %>
+  <p>住所</p>
+   <%=f.text_field :address %>
+  <p>電話番号</p>
+   <%=f.text_field :telephone_number %>
 
   <div class="field">
     <%= f.label :password %>

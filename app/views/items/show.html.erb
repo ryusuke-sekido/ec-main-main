@@ -1,7 +1,6 @@
-<h1>Items#show</h1>
 <p>商品詳細</p>
-<%= @item.name %> <%= @item.body %><%= image_tag @item.image, size: "100x100" %>
-
+<%= @item.name %> <%= @item.introduction %><%= image_tag @item.image, size: "100x100" %>
+<%= @item.price %>円
 
 <%= form_with model: CartItem.new,local:true do |f| %>
 <%= f.select :amount, *[1..3] %>

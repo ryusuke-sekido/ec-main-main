@@ -15,6 +15,15 @@ class CartItemsController < ApplicationController
     redirect_to cart_items_path
   end
 
+  def show
+  end
+
+  def destroy_all
+    @cart_item = current_customer.cart_items
+    @cart_item.destroy_all
+    redirect_to cart_items_path
+  end
+
 #def subtotal
  #   item.with_tax_price * amount
 #end
@@ -23,5 +32,5 @@ end
 
 private
 def cart_item_params
-  params.require(:cart_item).permit(:item_id, :amount)
+  params.require(:cart_item).permit(:name, :item_id, :amount)
 end

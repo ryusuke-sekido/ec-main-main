@@ -21,13 +21,13 @@ class AdressesController < ApplicationController
   end
 
   def update
-    @adress = Adress.find(params[:id])
-    @adress.update(adress_params)
-    redirect_to root_path
+    adress = Adress.find(params[:id])
+    adress.update(adress_params)
+    redirect_to adresses_path
   end
 end
 
 private
 def adress_params
-  params.permit(:postal_code, :address, :name)
+  params.require(:adress).permit(:postal_code, :address, :name)
 end

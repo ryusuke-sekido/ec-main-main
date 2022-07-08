@@ -1,8 +1,14 @@
 <h1>注文情報確認</h1>
 <h4>商品名</h4>
-<%#<%= @item.name %>
+<% @items.each do |item| %>
+<%= item.name %>
+<% end %>
+
 <h4>数量</h4>
-<%#<%= @cart_item.amount %>
+<% @cart_items.each do |cart_item| %>
+<%= cart_item.amount %>
+<% end %>
+
 <h4>支払い方法</h4>
 <%= @order.payment_method %>
 <h4>お届け先</h4>
